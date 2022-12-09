@@ -1,0 +1,49 @@
+.text {
+    font-family: cursive;
+    color: black;
+}
+
+body {
+    background-image:none ;
+    background-repeat: repeat-x;
+    background-size: 250px 500px;
+}
+
+.smurfClub {
+    color: lightblue;
+    font-size: x-large;
+}
+
+.smurfOffical {
+    color: lightblue;
+}
+
+.info {
+    color: lightblue;
+}
+
+.login {
+    color: greenyellow;
+    float: right;
+}
+
+.signup {
+    float: right;
+    color: yellowgreen;
+}
+
+.text_ {
+    font-family: cursive;
+}
+
+.easterEgg {
+position: relative; top: 65000px;
+}
+
+.rick {
+    position: relative; top: 100000px;
+}
+
+.nav {
+    background-color: lightblue;
+}

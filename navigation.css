@@ -1,0 +1,22 @@
+body {
+    background-color: lightblue;
+}
+
+.Amongus {
+    position: relative; top: 150000px;
+}
+
+.homeButton {
+    float: right;
+    background-color: cyan;
+}
+
+.link {
+    background-color: aqua;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.weapon {
+    background-color: aqua;
+}

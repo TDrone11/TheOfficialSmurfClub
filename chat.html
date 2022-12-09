@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="chat.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button><a href="index.html">home</a></button>
+// Enter Chat and press enter
+<div><input id=input placeholder="message" /></div>
+
+// Chat Output
+<div id=box></div>
+
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.7.2.1.min.js"></script>
+<script> (function() {
+        var pubnub = new PubNub({
+            publishKey: 'YOUR_PUBLISH_KEY_HERE',
+            subscribeKey: 'YOUR_SUBSCRIBE_KEY_HERE'
+        });
+        function $(id) {
+            return document.getElementById(id);
+        }
+        var box = $('box'),
+            input = $('input'),
+            channel = 'tenchatdemo';
+        pubnub.addListener({
+            message: function(obj) {
+                box.innerHTML = ('' + obj.message).replace(/[<>]/g, '') + '<br>' + box.innerHTML
+            }
+        });
+        pubnub.subscribe({
+            channels: [channel]
+        });
+        input.addEventListener('keyup', function(e) {
+            if ((e.keyCode || e.charCode) === 13) {
+                pubnub.publish({
+                    channel: channel,
+                    message: input.value,
+                    x: (input.value = '')
+                });
+            }
+        });
+    })();
+</script>
+</body>
+</html>

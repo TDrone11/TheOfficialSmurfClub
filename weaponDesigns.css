@@ -1,0 +1,12 @@
+body {
+background-color: lightblue;
+}
+
+.homeButton {
+float: right;
+
+background-color: aqua;
+
+border-radius: 10px;
+
+}
