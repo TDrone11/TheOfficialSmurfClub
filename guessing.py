@@ -27,11 +27,11 @@ while True:
             print("Nice job you get a point!")
             score += 1
             print("score = ",score,)
-        elif guess == secret >= 10:
+        if guess == secret >= 10:
             score += 1
-        elif guess == secret >= 25:
+        if guess == secret >= 25:
             score += 1
-        elif guess == secret >= 50:
+        if guess == secret >= 50:
             score += 2
         else:
             print("Try again!")
