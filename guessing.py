@@ -33,6 +33,8 @@ while True:
             score += 1
         if guess == secret >= 50:
             score += 2
+        if count <5:
+            score +=1
         else:
             print("Try again!")
             count += 1
