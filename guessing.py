@@ -16,34 +16,31 @@ while True:
     secret = random.randint(1,num)
 
     guess = None
-    count = 1 
-
+    count = 1
+    points = 0
+    
     while guess != secret:
         guess = input('Please type a number between 1 and ' + str(num) + " : ")
         if guess.isdigit():
             guess = int(guess)
-            
         if guess == secret:
-            print("Nice job you get a point!")
-            score += 1
-            print("score = ",score,)
-        if guess == secret:
-            num >= 10
-            score ++ 1
-        if guess == secret:
-                num >= 25
-                score ++ 2
-        if guess == secret:
-                num >=50
-                score ++ 5
-        if count >5:
-                score ++1
-        if guess >secret:
+            points += 1
+            if num >= 10:
+                points += 1
+            if num >= 25:
+                points += 2
+            if num >= 50:
+                points += 5
+            if count <= 5:
+                points += 1
+            print("Nice job you get ", points, " points!")
+        if guess > secret:
             print("Lower")
-        if guess <secret:
+        if guess < secret:
             print("Higher")
-        else:
-            print("Try again!")
-            count ++ 1
-            
+        if guess != secret:
+            print("Tries: ", count)
+            count += 1
     print("It took you", count, "try's")
+    score += points
+    print("Current Score = ",score,)
