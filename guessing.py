@@ -43,4 +43,4 @@ while True:
             count += 1
     print("It took you", count, "try's")
     score += points
-    print("Current Score = ",score,)
+    print("Current Score = ",points,)
