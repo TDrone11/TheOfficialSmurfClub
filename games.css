@@ -4,4 +4,6 @@ body {
 
 .home {
     float: right;
+    border-radius: 10px;
+    background-color: aqua;
 }
